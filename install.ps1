@@ -1,4 +1,4 @@
-$repo = "nguyendangkin/pip"
+$repo = "nguyendangkin/chin"
 $destDir = "$HOME\.chin"
 $destFile = "$destDir\chin.exe"
 $url = "https://github.com/$repo/releases/latest/download/chin.exe"

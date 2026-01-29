@@ -7,7 +7,17 @@
 
 ---
 
-## Cài Đặt
+## Cài Đặt (Installation)
+
+### 1. Cài đặt nhanh (Windows - PowerShell)
+Mở PowerShell và dán lệnh sau để tự động tải bản mới nhất và cấu hình PATH:
+
+```powershell
+powershell -c "iwr -useb https://raw.githubusercontent.com/nguyendangkin/pip/main/install.ps1 | iex"
+```
+
+### 2. Cài đặt từ Source Code
+Yêu cầu máy đã cài [Go](https://go.dev/dl/).
 
 ```bash
 git clone https://github.com/nguyendangkin/pip.git

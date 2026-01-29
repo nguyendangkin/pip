@@ -4,9 +4,9 @@ import (
 	"strings"
 )
 
-func ensurePipExtension(path string) string {
-	if strings.HasSuffix(strings.ToLower(path), ".pip") {
+func ensureChinExtension(path string) string {
+	if strings.HasSuffix(strings.ToLower(path), ".chin") {
 		return path
 	}
-	return path + ".pip"
+	return path + ".chin"
 }

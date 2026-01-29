@@ -1,6 +1,6 @@
 package main
 
-import "pip/cmd"
+import "chin/cmd"
 
 func main() {
 	cmd.Execute()

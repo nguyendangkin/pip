@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"pip/internal/archive"
+	"chin/internal/archive"
 	"text/tabwriter"
 
 	"github.com/spf13/cobra"
@@ -12,11 +12,11 @@ import (
 var listPassword string
 
 var listCmd = &cobra.Command{
-	Use:   "list [archive.pip]",
+	Use:   "list [archive.chin]",
 	Short: "List files in an archive",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		input := ensurePipExtension(args[0])
+		input := ensureChinExtension(args[0])
 
 		reader, err := archive.NewReader(input, listPassword)
 		if err != nil {

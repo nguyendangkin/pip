@@ -1,4 +1,4 @@
-module pip
+module chin
 
 go 1.25.6
 

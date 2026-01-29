@@ -1,14 +1,14 @@
 $repo = "nguyendangkin/pip"
-$destDir = "$HOME\.pip"
-$destFile = "$destDir\pip.exe"
-$url = "https://github.com/$repo/releases/latest/download/pip.exe"
+$destDir = "$HOME\.chin"
+$destFile = "$destDir\chin.exe"
+$url = "https://github.com/$repo/releases/latest/download/chin.exe"
 
 if (!(Test-Path $destDir)) {
     New-Item -ItemType Directory -Path $destDir | Out-Null
 }
 
 Write-Host "------------------------------------------" -ForegroundColor Cyan
-Write-Host "  Installing pip - Secure Archiver        " -ForegroundColor Cyan
+Write-Host "  Installing chin - Secure Archiver        " -ForegroundColor Cyan
 Write-Host "------------------------------------------" -ForegroundColor Cyan
 
 try {
@@ -27,10 +27,10 @@ if ($path -notlike "*$destDir*") {
     [Environment]::SetEnvironmentVariable("Path", "$path;$destDir", "User")
     $env:Path += ";$destDir"
     Write-Host " Added to PATH." -ForegroundColor Green
-    Write-Host "`nNOTE: Please RESTART your Terminal (PowerShell/CMD) to use the 'pip' command." -ForegroundColor Yellow
+    Write-Host "`nNOTE: Please RESTART your Terminal (PowerShell/CMD) to use the 'chin' command." -ForegroundColor Yellow
 } else {
     Write-Host " PATH is already configured." -ForegroundColor Gray
 }
 
-Write-Host "`nInstallation complete! Try typing: pip" -ForegroundColor Green
+Write-Host "`nInstallation complete! Try typing: chin" -ForegroundColor Green
 Write-Host "------------------------------------------"

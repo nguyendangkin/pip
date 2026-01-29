@@ -27,7 +27,7 @@ type SplitWriter struct {
 }
 
 func NewSplitWriter(basePath string, maxSize int64) (*SplitWriter, error) {
-	// First file is just .pip
+	// First file is just .chin
 	f, err := os.Create(basePath)
 	if err != nil {
 		return nil, err
@@ -84,7 +84,7 @@ func (s *SplitWriter) Write(p []byte) (n int, err error) {
 
 func (s *SplitWriter) rotate() error {
 	s.partIndex++
-	filename := fmt.Sprintf("%s.p%02d", s.basePath, s.partIndex) // .pip.p01
+	filename := fmt.Sprintf("%s.c%02d", s.basePath, s.partIndex) // .chin.c01
 	
 	f, err := os.Create(filename)
 	if err != nil {
@@ -213,7 +213,7 @@ type SplitReader struct {
 }
 
 func NewSplitReader(basePath string) (*SplitReader, error) {
-	// Open .pip
+	// Open .chin
 	f0, err := os.Open(basePath)
 	if err != nil {
 		return nil, err
@@ -224,7 +224,7 @@ func NewSplitReader(basePath string) (*SplitReader, error) {
 	// Detect other parts
 	i := 1
 	for {
-		name := fmt.Sprintf("%s.p%02d", basePath, i)
+		name := fmt.Sprintf("%s.c%02d", basePath, i)
 		f, err := os.Open(name)
 		if os.IsNotExist(err) {
 			break

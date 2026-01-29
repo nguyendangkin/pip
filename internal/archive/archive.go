@@ -9,14 +9,14 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"pip/internal/crypto"
-	"pip/internal/utils"
+	"chin/internal/crypto"
+	"chin/internal/utils"
 	"strings"
 	"time"
 )
 
 const (
-	Magic       = "PIP\x00"
+	Magic       = "CHIN"
 	Version     = 6 // New Version
 	MagicLength = 4
 	HeaderSize  = 72 // 4+2+2+8+8+32+16
@@ -178,7 +178,7 @@ func DeserializeMetadata(data []byte) (*Metadata, error) {
 }
 
 var (
-	ErrInvalidFormat    = errors.New("invalid pip format")
+	ErrInvalidFormat    = errors.New("invalid chin format")
 	ErrInvalidVersion   = errors.New("unsupported version (requires v6)")
 	ErrFileNotFound     = errors.New("file not found in archive")
 	ErrChecksumMismatch = errors.New("checksum mismatch")
@@ -253,10 +253,10 @@ func NewWriter(filename string, password string, splitSize int64) (*Writer, erro
 }
 
 func (w *Writer) AddFile(path string, nameInArchive string) error {
-	if strings.HasSuffix(strings.ToLower(path), ".pip") {
+	if strings.HasSuffix(strings.ToLower(path), ".chin") {
 		return nil 
 	}
-	if strings.Contains(strings.ToLower(path), ".pip.p") {
+	if strings.Contains(strings.ToLower(path), ".chin.c") {
 		return nil
 	}
 

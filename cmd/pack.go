@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"pip/internal/archive"
+	"chin/internal/archive"
 	"strconv"
 	"strings"
 	"time"
@@ -70,9 +70,9 @@ var packCmd = &cobra.Command{
 		start := time.Now()
 		
 		if packOutput == "" {
-			packOutput = filepath.Clean(args[0]) + ".pip"
+			packOutput = filepath.Clean(args[0]) + ".chin"
 		} else {
-			packOutput = ensurePipExtension(packOutput)
+			packOutput = ensureChinExtension(packOutput)
 		}
 
 		splitSize, err := parseSize(packSplit)

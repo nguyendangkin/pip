@@ -32,7 +32,7 @@ func DeriveKey(password []byte, salt []byte) []byte {
 // DeriveStreamKey derives a unique 32-byte File Key from the Master Key and a File Salt using HKDF.
 // This is fast and cryptographic safe for per-file key generation.
 func DeriveStreamKey(masterKey []byte, fileSalt []byte) ([]byte, error) {
-	hkdf := hkdf.New(sha256.New, masterKey, fileSalt, []byte("pip-stream-v6"))
+	hkdf := hkdf.New(sha256.New, masterKey, fileSalt, []byte("chin-stream-v6"))
 	key := make([]byte, KeySize)
 	if _, err := io.ReadFull(hkdf, key); err != nil {
 		return nil, err

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"pip/internal/archive"
+	"chin/internal/archive"
 	"time"
 
 	"github.com/schollz/progressbar/v3"
@@ -18,12 +18,12 @@ var (
 )
 
 var unpackCmd = &cobra.Command{
-	Use:   "unpack [archive.pip]",
+	Use:   "unpack [archive.chin]",
 	Short: "Extract files from an archive",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		start := time.Now()
-		input := ensurePipExtension(args[0])
+		input := ensureChinExtension(args[0])
 		
 		if unpackOutput == "" {
 			unpackOutput = "."

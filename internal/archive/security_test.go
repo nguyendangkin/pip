@@ -25,7 +25,7 @@ func TestZipSlip(t *testing.T) {
 	reader := &Reader{}
 	
 	// Create temp output dir
-	tmpDir, err := os.MkdirTemp("", "pip_test_zipslip")
+	tmpDir, err := os.MkdirTemp("", "chin_test_zipslip")
 	if err != nil {
 		t.Fatal(err)
 	}

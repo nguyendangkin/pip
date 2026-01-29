@@ -1,0 +1,12 @@
+# Binaries
+*.exe
+*.dll
+
+# Archives
+*.pip
+*.chin
+*.c*
+*.p*
+
+# Editor
+.vscode/

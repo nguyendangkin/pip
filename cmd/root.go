@@ -8,9 +8,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "pip",
-	Short: "pip is a fast and secure file archiver",
-	Long:  `pip is a CLI tool for packing, unpackaging, and managing secure file archives with speed and efficiency.`,
+	Use:   "chin",
+	Short: "chin is a fast and secure file archiver",
+	Long:  `chin is a CLI tool for packing, unpackaging, and managing secure file archives with speed and efficiency.`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
